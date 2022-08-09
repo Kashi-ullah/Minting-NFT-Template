@@ -3,6 +3,24 @@ import './assets/css/bootstrap.min.css';
 import './assets/css/style.min.css';
 import './assets/css/icofont.min.css';
 const MintNfts = () => {
+                            const countBox = 1;
+                            const boxName = 0;
+
+                            function addInput() {
+                                const boxName = "textBox" + countBox;
+
+                                document.getElementById('responce').innerHTML +=
+                                    '<br/><div id="' + boxName + '" value="' + boxName + '" " style="display: flex;"> <input type="text" class="form-control" style="width: 45%; margin: 0 1rem;" id="thread" /> <input type="text" class="form-control" style="width: 45%; margin: 0 1rem;" id="value" /> </div>';
+
+                                // document.getElementById('responce').innerHTML +=
+                                //  '<br/><input type="text" class="form-control" style="width: 45%;" id="' + boxName + '" value="' + boxName + '" "/>'
+                                //  ;
+                                //  var boxName = "textBox" + countBox;
+                                //  document.getElementById('responce').innerHTML +=
+                                //  '<input type="text" class="form-control" style="width: 45%;" id="' + boxName + '" value="' + boxName + '" "/>'
+                                //  ;
+                                countBox += 1;
+                            }
     return (
         <div>
 {/* header section start */}
@@ -166,7 +184,8 @@ const MintNfts = () => {
                 </div>
             </section>
             {/* middle section end */}
-            <div class=" container">
+            {/* mint nfts form start */}
+    <div class=" container">
         <div class="row g-5 align-items-center flex-md-row-reverse">
             <div class="col-lg-5">
                 <div class="account-wrapper">
@@ -189,7 +208,7 @@ const MintNfts = () => {
                             <label for="floatingPassword"></label>
                         </div>
                         {/* <!-- add attributes button --> */}
-                        <input class="btn btn-primary mb-4" type="button" value="Add Attributes" onclick="addInput()" />
+                        <input class="btn btn-primary mb-4" type="button" value="Add Attributes" onclick={addInput} />
 
                         <span id="responce"></span>
                         {/* <script>
@@ -229,7 +248,9 @@ const MintNfts = () => {
         </div>
 
     </div>
-        </div>
+    {/* mint nfts form end */}
+
+    </div>
     )
 }
 
